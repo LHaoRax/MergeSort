@@ -161,21 +161,19 @@ int Merge_Sort::Pass ()
     Array[num++] = 0 ;  // 将全局数组下标为0的值记为0
 
     for (int i = 1 ; i < count ; i++ ) 
-	{
-        if ( data[i] >= biger ) 
-		{
-            biger = data[i] ;
-        } 
-		else
-		{
-            Array[num++] = i ;
-            biger = data[i] ;
-        }
+    {
+	    if ( data[i] >= biger )
+	    {
+		    biger = data[i] ;
+	    }
+	    else
+	    {
+		    Array[num++] = i ;
+		    biger = data[i] ;
+	    }
     }
-
     // array数组存储每一组有序的数组的起始元素的下标,同时存储最后一个元素的下标+1,为了方便最后一组元素的合并二需要!!!
     Array[num++] = count ;
-
     return num ;        // num此时为数组最后一个元素下标+1
 }
 void Merge_Sort::natural_merge_sort (int *temp) 
